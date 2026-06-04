@@ -1,0 +1,24 @@
+{
+  "name": "stocknotification2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@notionhq/client": "^5.14.0",
+    "axios": "^1.13.6",
+    "dotenv": "^17.3.1",
+    "google-translate-api-next": "^0.1.0",
+    "playwright": "^1.58.2",
+    "xml2js": "^0.6.2",
+    "yahoo-finance2": "^3.13.2"
+  }
+}

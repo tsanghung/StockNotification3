@@ -1,0 +1,34 @@
+name: stock_morning_report
+description: 每日晨報 - 即時股市與財經新聞 Android APP
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # 網路請求
+  dio: ^5.7.0
+
+  # XML 解析 (RSS feeds)
+  xml: ^6.5.0
+
+  # 狀態管理
+  flutter_riverpod: ^2.6.1
+
+  # UI
+  shimmer: ^3.0.0
+  url_launcher: ^6.3.1
+  intl: ^0.19.0
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
