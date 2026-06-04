@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日晨報 - 2026年6月5日星期五</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text: #f8fafc;
+            --accent: #38bdf8;
+            /* 顏色顯示設定：採用台股慣例（紅漲綠跌） */
+            --up-color: #ef4444;   /* 紅色 */
+            --down-color: #22c55e; /* 綠色 */
+            --green: #22c55e;
+            --red: #ef4444;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Outfit', 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        .date {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-top: 10px;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+            margin: 40px 0 20px;
+            font-weight: 700;
+        }
+        /* 股市卡片區域 */
+        .stock-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .stock-card .symbol {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+        .stock-card .name {
+            font-size: 1.1rem;
+            margin: 5px 0;
+            font-weight: 700;
+        }
+        .stock-card .price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 10px 0;
+        }
+        .up { color: var(--red); }
+        .down { color: var(--green); }
+
+        /* 新聞區域 */
+        .news-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .news-section h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        .news-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .news-section li {
+            background: var(--card-bg);
+            margin-bottom: 10px;
+            border-radius: 12px;
+            transition: background 0.3s;
+        }
+        .news-section li:hover {
+            background: rgba(56, 189, 248, 0.1);
+        }
+        .news-section a {
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+            padding: 15px;
+        }
+        .news-title {
+            display: block;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .news-time {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 5px;
+            display: block;
+        }
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 20px;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>每日晨報</h1>
+            <div class="date">2026年6月5日星期五</div>
+        </header>
+
+        <div class="section-title">今日股市動態</div>
+        <div class="stock-grid">
+            
+    <div class="card stock-card">
+      <div class="symbol">^DJI</div>
+      <div class="name">道瓊工業指數</div>
+      <div class="price">51,561.93</div>
+      <div class="change up">
+        874.86 (1.73%)
+      </div>
+    </div>
+  
+    <div class="card stock-card">
+      <div class="symbol">^GSPC</div>
+      <div class="name">S&P 500 指數</div>
+      <div class="price">7,584.31</div>
+      <div class="change up">
+        30.63 (0.41%)
+      </div>
+    </div>
+  
+    <div class="card stock-card">
+      <div class="symbol">^IXIC</div>
+      <div class="name">NASDAQ 指數</div>
+      <div class="price">26,830.957</div>
+      <div class="change down">
+        -23.02 (-0.09%)
+      </div>
+    </div>
+  
+    <div class="card stock-card">
+      <div class="symbol">^SOX</div>
+      <div class="name">費城半導體指數</div>
+      <div class="price">13,617.495</div>
+      <div class="change down">
+        -299.46 (-2.15%)
+      </div>
+    </div>
+  
+    <div class="card stock-card">
+      <div class="symbol">TSM</div>
+      <div class="name">台積電 ADR</div>
+      <div class="price">444.92</div>
+      <div class="change up">
+        8.23 (1.88%)
+      </div>
+    </div>
+  
+    <div class="card stock-card">
+      <div class="symbol">WTX00</div>
+      <div class="name">台指期現貨</div>
+      <div class="price">45,677.46</div>
+      <div class="change down">
+        -781.70 (1.68%)
+      </div>
+    </div>
+  
+        </div>
+
+        <div class="section-title">盤勢重點回顧</div>
+        <div class="news-container">
+            
+        <div class="news-section">
+          <h3>美股盤後回顧</h3>
+          <ul>
+        <li>
+          <a href="https://tw.news.yahoo.com/%E6%8A%95%E8%B3%87%E4%BA%BA%E9%97%9C%E6%B3%A8%E4%B8%AD%E6%9D%B1%E5%B1%80%E5%8B%A2-%E7%BE%8E%E8%82%A1%E9%81%93%E7%93%8A%E6%BC%B2874%E9%BB%9E-%E5%8F%B0%E7%A9%8D%E9%9B%BBadr%E6%BC%B21-88-223841351.html" target="_blank">
+            <span class="news-title">投資人關注中東局勢　美股道瓊漲874點、台積電ADR漲1.88%</span>
+            <span class="news-time">上午07:15</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://tw.stock.yahoo.com/news/%E9%81%93%E7%93%8A%E5%A4%A7%E6%BC%B2%E8%BF%919%E7%99%BE%E9%BB%9E-%E6%99%B6%E7%89%87%E8%82%A1%E5%8D%BB%E5%80%92%E5%9C%B0-%E8%B2%BB%E5%8D%8A%E4%B8%8B%E6%8C%AB%E9%80%BE2-%E5%8F%B0%E6%8C%87%E6%9C%9F%E7%9B%A4%E5%BE%8C%E5%B0%8F%E6%BC%B232%E9%BB%9E-221850470.html" target="_blank">
+            <span class="news-title">道瓊大漲近9百點！晶片股卻倒地「費半下挫逾2％」　台指期盤後小漲32點</span>
+            <span class="news-time">上午07:15</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://tw.stock.yahoo.com/news/%E7%BE%8E%E8%82%A1%E7%9B%A4%E5%BE%8C-%E9%81%93%E7%93%8A%E7%8B%82%E6%BC%B2%E8%BF%91900%E9%BB%9E%E7%99%BB%E6%96%B0%E9%AB%98-%E5%8D%9A%E9%80%9A%E8%B2%A1%E5%A0%B1%E5%BC%95%E7%88%86%E6%99%B6%E7%89%87%E8%82%A1%E7%8D%B2%E5%88%A9%E4%BA%86%E7%B5%90%E8%B3%A3%E5%A3%93-215003538.html" target="_blank">
+            <span class="news-title">〈美股盤後〉道瓊狂漲近900點登新高 博通財報引爆晶片股獲利了結賣壓</span>
+            <span class="news-time">上午07:15</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://tw.stock.yahoo.com/news/%E7%BE%8E%E8%82%A1%E7%9B%A4%E5%BE%8C-%E8%B5%B0%E5%8B%A2%E4%B8%8D-214752379.html" target="_blank">
+            <span class="news-title">【美股盤後】走勢不一</span>
+            <span class="news-time">上午07:15</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://tw.news.yahoo.com/%E4%B8%AD%E6%9D%B1%E5%B1%80%E5%8B%A2%E9%80%B2%E5%B1%95%E6%8F%90%E6%8C%AF%E6%8A%95%E8%B3%87%E4%BF%A1%E5%BF%83-%E7%BE%8E%E8%82%A1%E9%81%93%E7%93%8A%E6%A8%99%E6%99%AE500%E6%8C%87%E6%95%B8%E6%94%B6%E9%AB%98-214641887.html" target="_blank">
+            <span class="news-title">中東局勢進展提振投資信心　美股道瓊標普500指數收高</span>
+            <span class="news-time">上午07:15</span>
+          </a>
+        </li>
+      </ul>
+        </div>
+      
+        <div class="news-section">
+          <h3>台股盤前重點</h3>
+          <ul>
+        <li>
+          <a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E5%89%B5%E9%AB%98-%E8%A1%9D%E4%B8%8A4%E8%90%AC%E5%A4%9A%E9%BB%9E%E6%98%AF%E7%9C%9F%E9%87%91%E9%82%84%E6%98%AF%E6%B3%A1%E6%B2%AB-ai%E5%83%B9%E5%80%BC%E9%87%8D%E4%BC%B0%E6%8F%AD%E7%9C%9F%E7%9B%B8-230600113.html" target="_blank">
+            <span class="news-title">台股創高 衝上4萬多點是真金還是泡沫？AI價值重估揭真相</span>
+            <span class="news-time">上午07:15</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://tw.news.yahoo.com/%E9%8C%A2%E9%8F%A1%E4%BD%A0%E5%AE%B61-%E5%8D%83%E9%87%91%E8%82%A1%E4%B8%8D%E9%A3%86%E4%BA%86-%E5%88%86%E6%9E%90%E5%B8%AB%E6%8F%AD%E5%8F%B0%E8%82%A1%E8%B3%87%E9%87%91%E8%BC%AA%E5%8B%95%E7%9C%9F%E7%9B%B8-%E4%B8%8B-%E6%B3%A2%E6%8F%9B%E9%80%99%E9%A1%9E%E8%82%A1-230059363.html" target="_blank">
+            <span class="news-title">錢鏡你家1／千金股不飆了？　分析師揭台股資金輪動真相：下一波換這類股</span>
+            <span class="news-time">上午07:15</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://tw.news.yahoo.com/%E9%8C%A2%E9%8F%A1%E4%BD%A0%E5%AE%B62-%E5%8F%B0%E8%82%A1%E4%BD%95%E6%99%82%E4%B8%8B%E8%BB%8A-%E9%81%94%E4%BA%BA%E7%A4%BA%E8%AD%A62%E5%A4%A7%E8%A8%8A%E8%99%9F-%E5%8F%8D%E6%89%8B%E8%B2%B7%E5%8F%B0%E7%A9%8D%E9%9B%BB%E7%AD%896%E6%9C%8818%E6%97%A5-230058455.html" target="_blank">
+            <span class="news-title">錢鏡你家2／台股何時下車？　達人示警2大訊號：反手買台積電等6月18日</span>
+            <span class="news-time">上午07:15</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://tw.news.yahoo.com/%E5%8F%B0%E8%82%A1%E7%9B%A4%E5%89%8D%EF%BC%8F%E5%8D%9A%E9%80%9A%E5%BC%95%E6%AE%BA%E7%9B%A4%E8%B2%BB%E5%8D%8A%E8%B7%8C%E9%80%BE2%EF%BC%81%E5%8F%B0%E6%8C%87%E5%A4%9C%E7%9B%A4%E4%B8%8A%E6%BC%B232%E9%BB%9E-%E5%8F%B0%E8%82%A1%E6%8B%9A%E6%AD%A2%E8%B7%8C%E5%8F%8D%E6%94%BB-222700744.html" target="_blank">
+            <span class="news-title">台股盤前／博通引殺盤費半跌逾2%！台指夜盤上漲32點　台股拚止跌反攻</span>
+            <span class="news-time">上午07:15</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://tw.stock.yahoo.com/news/%E5%8F%8B%E9%81%94adr4%E6%97%A5%E4%B8%8A%E6%BC%B20-51%E7%BE%8E%E5%85%83%E6%BC%B2%E5%B9%855-80-%E6%8A%98%E5%8F%B0%E8%82%A129-29%E5%85%83-214148782.html" target="_blank">
+            <span class="news-title">友達ADR4日上漲0.51美元漲幅5.80%折台股29.29元</span>
+            <span class="news-time">上午07:15</span>
+          </a>
+        </li>
+      </ul>
+        </div>
+      
+        </div>
+
+        <div class="section-title">焦點新聞</div>
+        <div class="news-container">
+            
+        <div class="news-section">
+          <h3>國內外政經</h3>
+          <ul>
+        <li>
+          <a href="https://finance.yahoo.com/markets/stocks/articles/69-old-furniture-store-chain-170700563.html" target="_blank">
+            <span class="news-title">69 年歷史的家具連鎖店根據美國破產法第 11 章申請破產</span>
+            <span class="news-time">上午01:07</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://finance.yahoo.com/markets/stocks/articles/super-micro-computer-just-unveiled-154744188.html" target="_blank">
+            <span class="news-title">Super Micro Computer 剛推出了新的 AMD Helios 平台。 這對 SMCI 股票意味著什麼。</span>
+            <span class="news-time">下午11:47</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://finance.yahoo.com/markets/stocks/articles/spacex-aims-largest-ipo-ever-154919249.html" target="_blank">
+            <span class="news-title">SpaceX 的目標是成為有史以來最大的 IPO，但它剛剛公佈了 42.8 億美元的季度虧損</span>
+            <span class="news-time">下午11:49</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://finance.yahoo.com/markets/stocks/articles/nvidia-ceo-jensen-huang-just-154220129.html" target="_blank">
+            <span class="news-title">Nvidia 執行長黃仁勳剛大幅提振 Marvell Technologies 股票</span>
+            <span class="news-time">下午11:42</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://finance.yahoo.com/markets/commodities/articles/2-minute-analysis-gold-silver-155153218.html" target="_blank">
+            <span class="news-title">我對2026年6月黃金和白銀價格的2分鐘分析</span>
+            <span class="news-time">下午11:51</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://finance.yahoo.com/markets/stocks/articles/anthropic-scales-most-powerful-ai-033300925.html" target="_blank">
+            <span class="news-title">提交 IPO 一天后，Anthropic 擴展了其最強大的人工智慧</span>
+            <span class="news-time">上午11:33</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://finance.yahoo.com/sectors/technology/articles/alphabet-raise-84-75-billion-153603843.html" target="_blank">
+            <span class="news-title">Alphabet 將透過大規模股票發行籌集 847.5 億美元，為人工智慧雄心提供資金</span>
+            <span class="news-time">下午11:36</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://finance.yahoo.com/markets/stocks/articles/amc-stock-soared-blockbuster-may-153331321.html" target="_blank">
+            <span class="news-title">AMC 股價因 5 月電影院上座率一鳴驚人而飆升。 接下來會發生什麼事。</span>
+            <span class="news-time">下午11:33</span>
+          </a>
+        </li>
+      </ul>
+        </div>
+      
+        <div class="news-section">
+          <h3>AI 產業趨勢</h3>
+          <ul>
+        <li>
+          <a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFB2ck1nRjJGSG9uanJYN3VlWWt5YmJDSUp1aFlqVVhXQmFxdGp3UE44UmE2cGpwa1luLVNGbzFrZUx3OGV6MG9KenQtbDFqc0hEdThmMG85azl3dw?oc=5" target="_blank">
+            <span class="news-title">Anthropic 聯合創始人警告人工智慧需要「煞車踏板」 - BBC</span>
+            <span class="news-time">上午05:53</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://news.google.com/rss/articles/CBMid0FVX3lxTE5rZmxSdFJrejlfQjg1YXZ3U29fZGdWMnVWRFFJaGRIc09aUDZtd0hmc3FHeXUzemxHRmtJN1RSYlMtV2o5aTZ2VzVWdl84QjRTOVlKTGlBSW50eUQweVE2UGJQZ3dnTFplMkNqV1pSTHVicWpOWWs0?oc=5" target="_blank">
+            <span class="news-title">Anthropic 警告人工智慧很快就會幫助打造自己的繼任者 - Axios</span>
+            <span class="news-time">上午12:00</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOMlBKWG9od29YLWVBZ0JUVkxKVVZOZ0N4dXpFSHU4RDZ3Y3VXUmYtVFNWUnJqODRKbkZkY1dwa2tYMzJIV2tvaVFZb19TWjNoUEthSi1LSzdzeDhrSk40X2JQVzNzQTUxX2hxWnlORGQxSXFLNEFZNWVjRWw4dWx6YjhCZHI5T01SdXZLM1BiWVByenJfY2ZTTVlLSTViSG1JOXZzNUxlNWQ0QTFnTU1IQTFhMA?oc=5" target="_blank">
+            <span class="news-title">在 IPO 之前，Anthropic 的 Daniela Amodei 消除了對人工智慧回報的疑慮 - TechCrunch</span>
+            <span class="news-time">上午06:43</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxQaDFleFZUYWIzWklfQy02UFJ3QTFVNVFvNUVKZXpmR0pzU2p3UURjOVc3Vl94a1dIZzU2NzV1bW80ZU9QN0x5ZDRrbko5Mi1LcFhuODA5WXd2bHlnTmtDWFM5NGpqb2owUmZVM1V0X3BPbWpUb1VYRlBpMVp2X3N3ZGVrNjBjMklLVmhEM3paZHBUaklYdHQ3NWFB?oc=5" target="_blank">
+            <span class="news-title">當你為人工智慧付費時，你實際上得到了什麼？ - 美國國家公共電台</span>
+            <span class="news-time">下午05:00</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxQeHhVeTBUeFlKU2Nwd1pSYjI0UXI4ZlNhejgyOXVVb2lfc3dSTUd4QVFEcmRXX1ZjMnhUdjBrMGRnbmZCRWtxWUltbXFxa0FPOUY3RTNJTDJXSFVWVlV4RW1vVXhjb0Z6WFFQOEhWVHN3ek9tdHRkLV92N1VKS2tDU2p6UGR3UUNGdFE?oc=5" target="_blank">
+            <span class="news-title">2026 年彭博技術大會：人工智慧、晶片、科技的即時新聞 - Bloomberg - Bloomberg.com</span>
+            <span class="news-time">上午06:38</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE9Ra1laOGtNYU9TMUdITEV2aWVpLUpjUU95NUNHLW1MZUd6Z1VwZ2FaUXZxNTBQbnoyUXVGZTE3ejdKN2RVVDMyWHRUbnVNT2J0Z0hJT1JB?oc=5" target="_blank">
+            <span class="news-title">人工智慧資料中心需求推動能源、科技公司創新 - 福斯新聞</span>
+            <span class="news-time">上午06:49</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPbnVxc2F5dlFYSU9KVWdHa0hma3kxd1JmRmRpTGdDT0RoQ2NEcExCaWd3bUozdy1JRm1QN2FCTU9PRVZRVGZESDdmUmRhSmRZdVpKcGcyQ2tFTS15Y2x4eVlneWJkdVpTVDgtbDByblNXbTBGcHU0dkk2V3VaRGJZSnlveUVQYngwaVRQdWsyRQ?oc=5" target="_blank">
+            <span class="news-title">意見 |川普終於面對了人工智慧的現實- 紐約時報</span>
+            <span class="news-time">下午05:03</span>
+          </a>
+        </li>
+      
+        <li>
+          <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxNTkNtRE9mbFptRFZIVV9rYXRuTW5jbFFpMmRZRlpSNEthLVFuRGhfSl9WYUptT3ZDMjQ2RmFqb1RPcjZnd3ZQZlhVRzJvbFpyVWJicE52S3dHd2d3RnR1NDVkU3dybmxab0hXcThndHYwbXQ2b1l3RlAyYmFYbThoNzUza2s1OXJkQklSYllxQmpQYjlucXVLTkY1THE4d9IBowFBVV95cUxPbVFYSnBzS0hzc1Bkck1FbFl4X3F4QURobVMzZHVSSXpuRV9pTmEzb0ZqalJKMmxVdjhMa1ZRZDMySHhiSUZOU0JpWDR3bFhmbDNMTHFEcldkWlF1WS14blFEbjdLSmZrSVFqeE9aVkpEVUxXdjVyR3RwLW1oUHVWdjN4X1c2RzBhSGtseF9tY1hzRGZES1RxM2pEdGJOME1yTEZV?oc=5" target="_blank">
+            <span class="news-title">華倫邀請英偉達執行長黃仁勳參加參議院有關中國人工智慧晶片銷售的聽證會 - CNBC</span>
+            <span class="news-time">上午05:43</span>
+          </a>
+        </li>
+      </ul>
+        </div>
+      
+        </div>
+
+        <footer>
+            &copy; 2026 Simon Morning Report. Generated by Antigravity.
+        </footer>
+    </div>
+</body>
+</html>
+  
